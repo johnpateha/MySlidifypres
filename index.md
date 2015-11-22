@@ -30,7 +30,7 @@ BMI is employed among children and adults to predict health outcomes. Commonly a
 --- 
 ## Data distribution
 
-My application calculate BMI for data, entered by user and show resalt at plot.  
+My application calculate BMI for data, entered by user and show result at plot.  
 The application uses "mixsmsn" R package, which contains BMI data for 2107 people. 
 This data reflect some sample distribution BMI values
 
