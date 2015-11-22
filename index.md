@@ -1,0 +1,72 @@
+---
+title       : My Shiny App. BMI
+subtitle    : Course Project for Developing Data Products
+author      : 22.11.2015
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]     # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides  
+
+---
+
+## Body mass index (BMI)
+
+The body mass index (BMI) is defined as the body mass divided by the square of the body height, 
+and is universally expressed in units of kg/m2, resulting from mass in kilograms and height in metres. 
+
+<div style="font-size: 120%;">
+$$BMI= \frac{weight_{kg}}{height_m^2 } = \frac{weight_{lb}}{height_{in}^2} * 703$$
+</div>
+
+BMI is employed among children and adults to predict health outcomes. Commonly accepted BMI ranges:  
+ - underweight: under 18.5
+ - normal weight: 18.5 to 25
+ - overweight: 25 to 30
+ - obese: over 30
+
+--- 
+## Data distribution
+
+My application calculate BMI for data, entered by user and show resalt at plot.  
+The application uses "mixsmsn" R package, which contains BMI data for 2107 people. 
+This data reflect some sample distribution BMI values
+
+```r
+library(mixsmsn);library(ggplot2);data(bmi)
+ggplot(aes(x=bmi),data=bmi) + theme_bw() + geom_histogram(binwidth=1,fill="grey",color="black")+ 
+        geom_vline(x=c(18.5,25),color="green",size=1) + geom_vline(x=30,color="red",size=1) + 
+        annotate("text", x=c(21.5,34), y=180, label=c("norm","obese"), color=c("green","red"))
+```
+
+![plot of chunk unnamed-chunk-1](assets/fig/unnamed-chunk-1-1.png) 
+
+---  
+
+## Application
+
+To calculate BMI, user should input weight and height data and push "Calc" button.
+
+<div style='text-align: center;'>
+    <img width='900' src='screen.png' />
+</div>
+
+---  
+
+## Links
+
+App link http://johnpateha.shinyapps.io/My_Shiny_App_BMI  
+
+Github repo http://github.com/johnpateha/MyShinyAppBMI  
+
+This presentation 
+
+For more information about BMI see <a href="http://en.wikipedia.org/wiki/Body_mass_index">  WiKi </a>  
+
+Information about <a href="http://cran.r-project.org/web/packages/mixsmsn/mixsmsn.pdf">  "mixsmsn"  </a> data package  
+
+ 
+ 
+

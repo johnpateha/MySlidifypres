@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Shiny App. BMI</title>
+  <meta charset="utf-8">
+  <meta name="description" content="My Shiny App. BMI">
+  <meta name="author" content="22.11.2015">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="./assets/css/slidify.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>My Shiny App. BMI</h1>
+    <h2>Course Project for Developing Data Products</h2>
+    <p>22.11.2015<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Body mass index (BMI)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The body mass index (BMI) is defined as the body mass divided by the square of the body height, 
+and is universally expressed in units of kg/m2, resulting from mass in kilograms and height in metres. </p>
+
+<div style="font-size: 120%;">
+$$BMI= \frac{weight_{kg}}{height_m^2 } = \frac{weight_{lb}}{height_{in}^2} * 703$$
+</div>
+
+<p>BMI is employed among children and adults to predict health outcomes. Commonly accepted BMI ranges:  </p>
+
+<ul>
+<li>underweight: under 18.5</li>
+<li>normal weight: 18.5 to 25</li>
+<li>overweight: 25 to 30</li>
+<li>obese: over 30</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Data distribution</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>My application calculate BMI for data, entered by user and show resalt at plot.<br>
+The application uses &quot;mixsmsn&quot; R package, which contains BMI data for 2107 people. 
+This data reflect some sample distribution BMI values</p>
+
+<pre><code class="r">library(mixsmsn);library(ggplot2);data(bmi)
+ggplot(aes(x=bmi),data=bmi) + theme_bw() + geom_histogram(binwidth=1,fill=&quot;grey&quot;,color=&quot;black&quot;)+ 
+        geom_vline(x=c(18.5,25),color=&quot;green&quot;,size=1) + geom_vline(x=30,color=&quot;red&quot;,size=1) + 
+        annotate(&quot;text&quot;, x=c(21.5,34), y=180, label=c(&quot;norm&quot;,&quot;obese&quot;), color=c(&quot;green&quot;,&quot;red&quot;))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To calculate BMI, user should input weight and height data and push &quot;Calc&quot; button.</p>
+
+<div style='text-align: center;'>
+    <img width='900' src='screen.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Links</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>App link <a href="http://johnpateha.shinyapps.io/My_Shiny_App_BMI">http://johnpateha.shinyapps.io/My_Shiny_App_BMI</a>  </p>
+
+<p>Github repo <a href="http://github.com/johnpateha/MyShinyAppBMI">http://github.com/johnpateha/MyShinyAppBMI</a>  </p>
+
+<p>This presentation </p>
+
+<p>For more information about BMI see <a href="http://en.wikipedia.org/wiki/Body_mass_index">  WiKi </a>  </p>
+
+<p>Information about <a href="http://cran.r-project.org/web/packages/mixsmsn/mixsmsn.pdf">  &quot;mixsmsn&quot;  </a> data package  </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Body mass index (BMI)'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Data distribution'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Application'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Links'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
