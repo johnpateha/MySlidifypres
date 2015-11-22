@@ -61,7 +61,7 @@ App link http://johnpateha.shinyapps.io/My_Shiny_App_BMI
 
 Github repo http://github.com/johnpateha/MyShinyAppBMI  
 
-This presentation 
+This presentation http://johnpateha.github.io/MySlidifypres
 
 For more information about BMI see <a href="http://en.wikipedia.org/wiki/Body_mass_index">  WiKi </a>  
 
