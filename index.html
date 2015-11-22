@@ -73,8 +73,7 @@ $$BMI= \frac{weight_{kg}}{height_m^2 } = \frac{weight_{lb}}{height_{in}^2} * 703
   </hgroup>
   <article data-timings="">
     <p>My application calculate BMI for data, entered by user and show result at plot.<br>
-The application uses &quot;mixsmsn&quot; R package, which contains BMI data for 2107 people. 
-This data reflect some sample distribution BMI values</p>
+The application uses &quot;mixsmsn&quot; R package, which contains BMI data for 2107 people.</p>
 
 <pre><code class="r">library(mixsmsn);library(ggplot2);data(bmi)
 ggplot(aes(x=bmi),data=bmi) + theme_bw() + geom_histogram(binwidth=1,fill=&quot;grey&quot;,color=&quot;black&quot;)+ 
